@@ -21,6 +21,14 @@ admin.site.register(Author, AuthorAdmin)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title','author', 'display_genre')
 
+    def display_genre(self):
+        """
+        Creates a string for the Genre.
+        This is required to display genre in Admin.
+        """
+        return ','.join([ genre.name for genre in self.genre.all()[:3] ])
+    display_genre.short_description = "Genre"
+
 
 # Register the Admin classes for BookInstance using the decorator
 @admin.register(BookInstance)
