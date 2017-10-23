@@ -78,8 +78,6 @@ class Book(models.Model):
         """
         return reverse('book-detail', args=[str(self.id)])
 
-
-
     def display_genre(self):
         """
         Creates a string for the Genre.
