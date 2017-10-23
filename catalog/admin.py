@@ -9,6 +9,9 @@ admin.site.register(Language)
 
 
 class BookInline(admin.StackedInline):
+    """
+    Inline editing of Book model
+    """
     model = Book
     extra = 0
 
@@ -26,6 +29,9 @@ admin.site.register(Author, AuthorAdmin)
 
 
 class BookInstanceInline(admin.TabularInline):
+    """
+    Inline editing of BookInstance model
+    """
     model = BookInstance
     readonly_fields = ['id']
     extra = 0
