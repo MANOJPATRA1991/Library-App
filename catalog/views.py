@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
 
+
 # Create your views here.
 def index(request):
     """
