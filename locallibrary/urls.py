@@ -27,15 +27,20 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    # Maps all urls with the pattern admin/ to the module admin.site.urls
     url(r'^admin/', admin.site.urls),
 ]
 
 urlpatterns += [
+    # Maps all urls with the pattern catalog/ to the module catalog.urls
+    # the file with the relative URL /catalog/urls.py
     url(r'^catalog/', include('catalog.urls')),
 ]
 
 urlpatterns += [
+    # Redirect empty url to /catalog/
     url(r'^$', RedirectView.as_view(url='/catalog/', permanent=True)),
 ]
 
+# Enable serving of static files
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
