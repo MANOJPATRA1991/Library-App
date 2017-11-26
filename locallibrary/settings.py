@@ -20,9 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Secret key used as part of Django's website security strategy
 SECRET_KEY = 'p!!3tofr095k(l=tq$!sb4qh*0hg2b0i0tv-9-p#mwjcju$h3&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Enables debugging logs to be displayed on error
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -107,6 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+# Set the time zone
 TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
